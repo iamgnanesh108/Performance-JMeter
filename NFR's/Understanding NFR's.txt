@@ -1,0 +1,66 @@
+Understanding of different categories of NFR's:
+Product to product, NFR's will vary. Ex: we have banking application and e-commerce application. Response time requirements may vary here from one app to other app type.
+
+Educate customer about perf testing and come up with the NFR's. - speed,scalable and reliable
+NFR's should be validated with Solution Architect.
+Questions needs to be asked to customer:
+
+General Categories of NFR's:
+
+Security:
+Does your product store or transmit sensitive information?
+Does your IT department require adherence to specific standards?
+What security best practices are used in your industry?
+
+Capacity(deals with performance testing):
+What are your system's storage requirements, today and in the future?
+- today may be 1000 users but in future there may be 5000 userss. hence storage requirement is imp.
+How will your system scale up for increasing volume demands?
+- if increase in demand, will system scale up? what is the strategy to scale?
+
+Compatibility(partially in performance testing):
+What are the minimum hardware requirements?
+What operating systems and their versions must be supported?
+What browers does the application is compatible?
+
+Reliability and Availability(99.99%)(deals with perf testing): 
+comes under site reliability testing.For disaster recovery. KPI's: RTO & RPO
+- App should run for longer period of time.
+What is the critical failure time under normal usage? - what if app fails and app goes down. How much time does it takes to recover?=> How much down time is permissible?
+Does a user need access for all hours of the day?
+
+Maintainablility + Manageability:
+How much time does it takes to fix the components and how easily can an administrator manage the system?
+Also we can define Recoverability and serviceability.
+
+Scalability(Comes under performance testing):
+What are the highest workloads under which the system will perform as expected?(Black Friday test/big billion day)
+- Are my servers scale up to the additional volumetric?!
+
+Usability:(As an End-User)
+How easy to use this product? What defines the experience of using the product?
+- How the user experience?(good/bad/excellent - define some criteria)
+
+Performance:
+How quickly the system can respond to user's activity? - RT of Application should be < 5sec
+How long does a user wait for a specific operation to happen? - Some Applications will have batch jobs. How long have to wait for that operation to complete.
+
+Regulatory:
+Are there requirements you need to satisfy for compliance?(whether the application is meeting the rules set by the govt.)
+
+Environmental(Deals with perf testing to understand Application Architecture):
+What are the different types ofenvironments will the system be expected to perform within?
+- Where the application is hosted?! - AWS/On-premise
+
+Examples of NFR's:(we should have to determine which are related to performance. Mark Inscope which are related to performance. Mark out of scope which are not related to performance and Justify why)
+1. Each page must load within 2sec. - NFR related to performance
+2. The process must finish within 3hours so data is available at 8:00AM after an overnight update. - NFR related to performance
+3. The system must meet Web Content Accessibility Guidelines WCAG2.1 - NFR related to Accessibility(More access to disabled person like color blind)
+4. DB security must meet HIPAA Requirements - NFR related to Regulatory.
+5. Users shall be prompted to provide an electronic signature before loading a new page - NFR related to Security
+6. The app should work on chrome 8.1 and highr only - NFR related to compatibility
+
+Functional Requirement: 
+When I fill some form and when I save the form. Whether the save option is able to save the data or not. comes under functional.
+Non-Functional Requirement:
+How the save option is behaving? whether getting a faster response/ whether save needs any security etc..
